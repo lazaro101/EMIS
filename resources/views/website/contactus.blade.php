@@ -113,12 +113,23 @@
             </div>
             <h4 class="ui right floated header">Event Details</h4>
             <div class="ui clearing divider"></div>
-            <div class="six wide field">
-              <label>Event Date:</label>
-              <div class="ui calendar date">
-                <div class="ui input left icon">
-                  <i class="calendar icon"></i>
-                  <input type="text" placeholder="Date" name="eventdate">
+            <div class="two fields">
+              <div class="six wide field">
+                <label>Event Date:</label>
+                <div class="ui calendar date">
+                  <div class="ui input left icon">
+                    <i class="calendar icon"></i>
+                    <input type="text" placeholder="Date" name="eventdate">
+                  </div>
+                </div>
+              </div>
+              <div class="six wide field">
+                <label>Event Time:</label>
+                <div class="ui calendar time">
+                  <div class="ui input left icon">
+                    <i class="clock icon"></i>
+                    <input type="text" placeholder="Time" name="eventtime">
+                  </div>
                 </div>
               </div>
             </div>
