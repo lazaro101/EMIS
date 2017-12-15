@@ -22,6 +22,7 @@ class WebsiteController extends Controller
 		$eventdate = date_format(date_create($_POST['eventdate']),"Y-m-d");
 		$eventid = DB::table('event_details')->insertGetId([
 			'event_date' => $eventdate,
+			'event_time' => date_format(date_create($_POST['eventtime']),"H:i:s"),
 			'event_guest_count' => $_POST['guest'],
 			'event_occassion' => $_POST['occassion'],
 			'event_address' => $_POST['location'],

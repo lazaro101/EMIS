@@ -11,6 +11,9 @@
     // startMode: 'month',
       type: 'date'
     });
+    $('.ui.calendar.time').calendar({
+      type: 'time'
+    });
   });
 </script>
 @endsection
