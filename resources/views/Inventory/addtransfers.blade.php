@@ -68,6 +68,12 @@
                   </div>
                 </div>
               </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" name="addpur">
+                  <label>Add purchase to inventory?</label>
+                </div>
+              </div>
             </div>
           </div>
         </div>

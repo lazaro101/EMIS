@@ -108,7 +108,9 @@ class FormInvntry extends Controller
 				'unit_value' => $uv[$x],
 				'qty' => $qty[$x],
 			]);
-			DB::table('equipment_inventory')->where('equipment_inventory_id',$eq[$x])->increment('equipment_inventory_qty',$qty[$x]);
+			if (isset($_POST['addpur'])) {
+				DB::table('equipment_inventory')->where('equipment_inventory_id',$eq[$x])->increment('equipment_inventory_qty',$qty[$x]);
+			}
 		}
 		return redirect('/Admin/Inventory/Transfers');
 	}
