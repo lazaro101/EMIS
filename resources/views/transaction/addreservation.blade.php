@@ -108,7 +108,7 @@
                 <div class="ui calendar time">
                   <div class="ui input left icon">
                     <i class="clock icon"></i>
-                    <input placeholder="Input..." name="eventtime">
+                    <input placeholder="Input..." name="eventtime" value="@if(!isset($event->event_time)){{date_format(date_create('now'),'Y-m-d')}}@else {{$event->event_time}} @endif">
                   </div>
                 </div>
               </div>
