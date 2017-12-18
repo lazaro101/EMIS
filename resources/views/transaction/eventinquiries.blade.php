@@ -170,20 +170,8 @@
                 {{ $inquiry->status}}</label>
             </td>
             <td class="center aligned" data-id="{{ $inquiry->event_inquiry_id }}">
-              <div class="ui icon inverted green button edit"><i class="pencil icon"></i></div>
-              <!-- <div class="ui icon inverted blue button info"><i class="circle info icon"></i></div> -->
+              <div class="ui icon inverted blue button edit"><i class="info circle icon"></i></div>
               <div class="ui icon inverted negative button delete"><i class="trash bin icon"></i></div>
-          <!--     <div class="ui teal small buttons">
-                <div class="ui button">Save</div>
-                <div class="ui floating dropdown icon button">
-                  <i class="dropdown icon"></i>
-                  <div class="menu">
-                    <div class="item"><i class="edit icon"></i> Edit Post</div>
-                    <div class="item"><i class="delete icon"></i> Remove Post</div>
-                    <div class="item"><i class="hide icon"></i> Hide Post</div>
-                  </div>
-                </div>
-              </div> -->
             </td>
           </tr>
         @endforeach
