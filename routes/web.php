@@ -62,7 +62,7 @@ Route::get('/getEvents', 'Transaction@getEvents');
 Route::get('htmltopdfview',array('as'=>'htmltopdfview','uses'=>'FormTrans@htmltopdfview'));
 
 Route::get('Admin/Transaction/Event-Inquiries', 'Transaction@EventInquiries');
-Route::post('/editInquiry', 'Transaction@editInquiry');
+Route::get('/editInquiry', 'Transaction@editInquiry');
 Route::post('/deleteInquiry', 'Transaction@deleteInquiry');
 
 Route::get('Admin/Transaction/Payments', 'Transaction@Payments');
