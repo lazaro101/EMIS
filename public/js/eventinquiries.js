@@ -9,11 +9,34 @@ $(document).ready(function(){
   $('.ui.dropdown.status').dropdown();
 
   $('.table-cont .edit').click(function(){
-    $('#editform form').form('set value','id',$(this).closest('td').data('id'));
-    $('#editform')
-      .modal('show')
-      .modal('setting','autofocus',false);
+    var id = $(this).closest('td').data('id');
+    swal({
+      title: "Accept Inquiry?",
+      buttons: {
+        Accept: {
+          text: "Accept",
+          value: "Accept",
+        },
+        Reject: {
+          text: "Reject",
+          value: "Reject",
+        },
+      },
+    }).
+    then((value) => {
+      switch (value) {
+        case "Accept":
+          window.location.href="/editInquiry?id="+id+"&status=accept";
+          break;
+     
+        case "Reject":
+          window.location.href="/editInquiry?id="+id+"&status=reject";
+          break;
+      }
+    });
   });
+
+
   $('.table-cont .delete').click(function(){
     var id = $(this).closest('td').data('id');
     $('.ui.basic.modal')

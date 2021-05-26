@@ -563,6 +563,7 @@ $(document).ready(function(){
         response.forEach(function(data) {
           for(var j=data.qty;j!=0;j--){
             addfood('four',foodid,'#menu-cont','menu');
+            $('#menu-cont .ctgry'+foodid).addClass('disabled');
             $('#menu-cont .ctgry'+foodid).dropdown('set selected',data.submenu_category_id);
             foodid++;
           }

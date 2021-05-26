@@ -138,7 +138,7 @@
         <thead class="full-width">
           <tr>
             <th class="two wide">Date</th>
-            <th class="two wide">Event Date</th>
+            <th class="two wide">Event Date & Time</th>
             <th class="two wide">Name</th>
             <th class="two wide">Contact</th>
             <th class="two wide">Email</th>
@@ -159,7 +159,7 @@
         @foreach ($inquiry as $inquiry)
           <tr> 
             <td>{{ date("m/d/y", strtotime($inquiry->event_inquiry_date)) }}</td>
-            <td>{{ date("m/d/y", strtotime($inquiry->event_date)) }}</td>
+            <td>{{ date("m/d/y", strtotime($inquiry->event_date)).'  '.date("h:i A", strtotime($inquiry->event_time))}}</td>
             <td>{{ $inquiry->client_fname }} {{ $inquiry->client_lname }}</td>
             <td>{{ $inquiry->client_contact1 }}</td>
             <td>{{ $inquiry->client_email }}</td>
@@ -170,8 +170,7 @@
                 {{ $inquiry->status}}</label>
             </td>
             <td class="center aligned" data-id="{{ $inquiry->event_inquiry_id }}">
-              <div class="ui icon inverted green button edit"><i class="pencil icon"></i></div>
-              <!-- <div class="ui icon inverted blue button info"><i class="circle info icon"></i></div> -->
+              <div class="ui icon inverted blue button edit"><i class="info circle icon"></i></div>
               <div class="ui icon inverted negative button delete"><i class="trash bin icon"></i></div>
             </td>
           </tr>

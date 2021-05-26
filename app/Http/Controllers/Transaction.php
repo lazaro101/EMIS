@@ -121,10 +121,11 @@ class Transaction extends Controller
 		return view('transaction.eventinquiries',['inquiry' => $inquiry]);
 	}
 	public function editInquiry(Request $req, Validator $validator){
-		DB::table('event_inquiry')->where('event_inquiry_id',$_POST['id'])->update(['status'=>$_POST['status']]);
-		if ($_POST['status'] == 'Approved') {
-			return redirect('/Admin/Transaction/Event-Reservation?eventdetails=new&id='.$_POST['id']);
+		if ($_GET['status'] == 'accept') {
+			DB::table('event_inquiry')->where('event_inquiry_id',$_GET['id'])->update(['status'=> 'Approved']);
+			return redirect('/Admin/Transaction/Event-Reservation?eventdetails=new&id='.$_GET['id']);
 		} else {
+			DB::table('event_inquiry')->where('event_inquiry_id',$_GET['id'])->update(['status'=> 'Cancelled']);
 			return redirect('/Admin/Transaction/Event-Inquiries');
 		}
 	}
